@@ -1,3 +1,13 @@
+function doGet(e) {
+
+  var op = e.parameter.action;
+
+    return ContentService.createTextOutput("Success").setMimeType(ContentService.MimeType.JAVASCRIPT);
+    
+
+
+}
+
 function doPost(e) {
 
   var op = e.parameter.SurveyName;
@@ -114,3 +124,38 @@ var i=0;
        Answer4:Answer4,
  
 })                  }
+    
+    
+    
+    
+   
+   
+    
+    
+    
+   
+    
+    
+   
+    
+    
+    
+    Logger.log('Response #%s to the question "%s" was "%s"',
+        (i + 1).toString(),
+        itemResponse.getItem().getTitle(),
+            Survey,'tipi=',  itemResponse.getItem().getType(),'userid',form.getCustomClosedFormMessage(),'Soru  =',Question);
+
+
+
+  
+  
+  }
+  var baseUrl = "https://makesurvey-3bbf0.firebaseio.com/";
+  var secret = "VyRraoTXirPRgekGLnfdckvctWHGC7zFJYVlETf8";
+  var database = FirebaseApp.getDatabaseByUrl(baseUrl, secret);
+  Logger.log(database.pushData("AnswerofSurveys/"+form.getCustomClosedFormMessage()+"/"+form.getTitle()+"/Answers", Survey));
+
+  
+
+
+}
