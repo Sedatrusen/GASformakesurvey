@@ -150,8 +150,8 @@ var i=0;
   
   
   }
-  var baseUrl = "https://makesurvey-3bbf0.firebaseio.com/";
-  var secret = "VyRraoTXirPRgekGLnfdckvctWHGC7zFJYVlETf8";
+  var baseUrl = "yourfirebaseURL";
+  var secret = "yoursecret";
   var database = FirebaseApp.getDatabaseByUrl(baseUrl, secret);
   Logger.log(database.pushData("AnswerofSurveys/"+form.getCustomClosedFormMessage()+"/"+form.getTitle()+"/Answers", Survey));
 
